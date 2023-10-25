@@ -1,0 +1,58 @@
+<Application x:Class="TrackBoss.App" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+             xmlns:local="clr-namespace:TrackBoss" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             d1p1:Ignorable="d" 
+             xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:converters="clr-namespace:TrackBoss.View.Shared.Converters">
+
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- Colors -->
+            <Color x:Key="BackstageColor" />
+            <Color x:Key="BackstageTextColor" />
+            <Color x:Key="BackgroundDarkColor" />
+            <Color x:Key="BackgroundLightColor" />
+            <Color x:Key="HoverColor" />
+            <Color x:Key="PendingTrainBackgroundColor" />
+            <Color x:Key="PendingTrainForegroundColor" />
+            <Color x:Key="ScheduledTrainBackgroundColor" />
+            <Color x:Key="ScheduledTrainForegroundColor" />
+            <Color x:Key="PassengerTrainBackgroundColor" />
+            <Color x:Key="PassengerTrainForegroundColor" />
+            <Color x:Key="ExtraBoardTrainBackgroundColor" />
+            <Color x:Key="ExtraBoardTrainForegroundColor" />
+            <Color x:Key="SwitcherBackgroundColor" />
+            <Color x:Key="SwitcherForegroundColor" />
+            <Color x:Key="WorksOriginBackgroundColor" />
+            <Color x:Key="WorksOriginForegroundColor" />
+            <Color x:Key="WorksStopBackgroundColor" />
+            <Color x:Key="WorksStopForegroundColor" />
+            <Color x:Key="WorksDestinationBackgroundColor" />
+            <Color x:Key="WorksDestinationForegroundColor" />
+            <Color x:Key="FastClockBackgroundColor" />
+            <Color x:Key="FastClockForegroundColor" />
+
+            <!-- Predefined Brushes -->
+            <SolidColorBrush x:Key="BackstageBrush" Color="{StaticResource BackstageColor}" />
+            <SolidColorBrush x:Key="BackstageTextBrush" Color="{StaticResource BackstageTextColor}" />
+            <SolidColorBrush x:Key="HoverBrush" Color="{StaticResource HoverColor}"/>
+            <SolidColorBrush x:Key="BackgroundDarkBrush" Color="{StaticResource BackgroundDarkColor}" />
+            <SolidColorBrush x:Key="BackgroundLightBrush" Color="{StaticResource BackgroundLightColor}" />
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/Styles/BaseStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Controls/Custom.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/TextStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/SeparatorStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/PanelStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/ButtonStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Styles/ImageStyles.xaml" />
+                <ResourceDictionary Source="/Resources/Controls/ItemTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>

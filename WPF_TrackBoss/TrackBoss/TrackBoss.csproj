@@ -1,0 +1,1713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A8C1B542-A879-44E3-A7A1-816D0EE28F78}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TrackBoss</RootNamespace>
+    <AssemblyName>TrackBoss</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\CRH.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TrackBoss.App</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>application.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>Supporting Assemblies\CastleWindsor\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor">
+      <HintPath>Supporting Assemblies\CastleWindsor\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.6.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.6\lib\net48\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Syncfusion.Data.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Data.WPF.20.4.0.43\lib\net46\Syncfusion.Data.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=632609b4d040f6b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Licensing.20.4.0.43\lib\net46\Syncfusion.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfAccordion.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfAccordion.WPF.20.4.0.43\lib\net46\Syncfusion.SfAccordion.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfBusyIndicator.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfBusyIndicator.WPF.20.4.0.43\lib\net46\Syncfusion.SfBusyIndicator.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfDiagram.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfDiagram.WPF.20.4.0.43\lib\net46\Syncfusion.SfDiagram.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfGauge.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfGauge.WPF.20.4.0.43\lib\net46\Syncfusion.SfGauge.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfGrid.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfGrid.WPF.20.4.0.43\lib\net46\Syncfusion.SfGrid.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfInput.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfInput.WPF.20.4.0.43\lib\net46\Syncfusion.SfInput.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfShared.WPF, Version=19.1460.0.54, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Program Files (x86)\Syncfusion\Essential Studio\WPF\19.1.0.54\Assemblies\4.6\Syncfusion.SfShared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.SfSkinManager.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.SfSkinManager.WPF.20.4.0.43\lib\net46\Syncfusion.SfSkinManager.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.Base, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.Base.20.4.0.43\lib\net46\Syncfusion.Shared.Base.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Shared.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Shared.WPF.20.4.0.43\lib\net46\Syncfusion.Shared.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Themes.FluentLight.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Themes.FluentLight.WPF.20.4.0.43\lib\net46\Syncfusion.Themes.FluentLight.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Themes.Office2016White.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Themes.Office2016White.WPF.20.4.0.43\lib\net46\Syncfusion.Themes.Office2016White.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="Syncfusion.Tools.WPF, Version=20.4460.0.43, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
+      <HintPath>..\packages\Syncfusion.Tools.WPF.20.4.0.43\lib\net46\Syncfusion.Tools.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.115.5\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.115.5\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Expression.Blend.Sdk.1.0.2\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.2.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.2.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Model\Enumerations\Designer.cs" />
+    <Compile Include="Model\Enumerations\ShowDesignerReason.cs" />
+    <Compile Include="Model\Enumerations\TimeFormat.cs" />
+    <Compile Include="Model\Licensing\LicenseModel.cs" />
+    <Compile Include="Model\Shared\FastClockModel.cs" />
+    <Compile Include="Model\Shared\FastClockSnapshotModel.cs" />
+    <Compile Include="Model\Shared\StatusModel.cs" />
+    <Compile Include="SharedAssemblyInfo.cs" />
+    <Compile Include="ViewModel\Cabeese\CabeeseDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Cabeese\CabooseViewModel.cs" />
+    <Compile Include="ViewModel\Cabeese\CupolaTypeViewModel.cs" />
+    <Compile Include="ViewModel\Cars\CarGroupViewModel.cs" />
+    <Compile Include="ViewModel\Cars\CarsDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Cars\CarTypeViewModel.cs" />
+    <Compile Include="ViewModel\Cars\CarViewModel.cs" />
+    <Compile Include="ViewModel\Cars\LoadsEmptyViewModel.cs" />
+    <Compile Include="ViewModel\ChangeTrackingViewModel.cs" />
+    <Compile Include="ViewModel\Cities\CitiesDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Cities\CityGroupViewModel.cs" />
+    <Compile Include="ViewModel\Cities\CityViewModel.cs" />
+    <Compile Include="ViewModel\Cities\IndustryViewModel.cs" />
+    <Compile Include="ViewModel\Cities\NeighborViewModel.cs" />
+    <Compile Include="ViewModel\Cities\SpurViewModel.cs" />
+    <Compile Include="ViewModel\Cities\SpurIndustryViewModel.cs" />
+    <Compile Include="ViewModel\Cities\SubdivisionViewModel.cs" />
+    <Compile Include="ViewModel\Comparers\CabooseViewModelComparer.cs" />
+    <Compile Include="ViewModel\Comparers\CabooseViewModelReverseComparer.cs" />
+    <Compile Include="ViewModel\Comparers\CarViewModelComparer.cs" />
+    <Compile Include="ViewModel\Comparers\CarViewModelReverseComparer.cs" />
+    <Compile Include="ViewModel\Comparers\LocomotiveViewModelComparer.cs" />
+    <Compile Include="ViewModel\Comparers\LocomotiveViewModelReverseComparer.cs" />
+    <Compile Include="ViewModel\Comparers\ViewModelBaseComparer.cs" />
+    <Compile Include="ViewModel\Comparers\ViewModelBaseReverseComparer.cs" />
+    <Compile Include="ViewModel\Crew\CrewDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Crew\CrewMemberViewModel.cs" />
+    <Compile Include="ViewModel\Crew\CrewViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\LocationSelectionDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\HasValidationErrorsDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\WhatsNewDialogViewModel.cs" />
+    <Compile Include="ViewModel\Locations\LocationStatisticsViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\DecoderViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\DCCViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\DieselLocomotiveGenerationViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\LocomotiveConfigurationViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\LocomotivesDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\LocomotiveViewModel.cs" />
+    <Compile Include="ViewModel\Locomotives\SteamLocomotiveClassViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageConductViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageWelcomeViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\DwellTimeDataViewModel.cs" />
+    <Compile Include="ViewModel\Services\WorkEditorViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServicesViewModel.cs" />
+    <Compile Include="ViewModel\Services\ServicesDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Settings\AppearanceSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Settings\GeneralSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Settings\LayoutSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Settings\OperationsSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Shared\AliasPrinterViewModel.cs" />
+    <Compile Include="ViewModel\Shared\CommodityGroupViewModel.cs" />
+    <Compile Include="ViewModel\Shared\CommodityViewModel.cs" />
+    <Compile Include="ViewModel\Shared\LocationViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\MaintenanceDataViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\OwnerViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\RoadViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\RollingStockViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\ScaleDataViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\WheelArrangementViewModel.cs" />
+    <Compile Include="ViewModel\Settings\ColorSettingsViewModel.cs" />
+    <Compile Include="ViewModel\GenericListBasedViewModel.cs" />
+    <Compile Include="ViewModel\EditorViewModel.cs" />
+    <Compile Include="ViewModel\IInitializableViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageHelpViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageHistoryViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageLicenseViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageNewViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstagePrintingViewModel.cs" />
+    <Compile Include="ViewModel\Main\BackstageSettingsViewModel.cs" />
+    <Compile Include="ViewModel\Main\HistoryItemViewModel.cs" />
+    <Compile Include="ViewModel\Main\MainViewModel.cs" />
+    <Compile Include="ViewModel\Main\HelpViewModel.cs" />
+    <Compile Include="ViewModel\Main\StatusViewModel.cs" />
+    <Compile Include="ViewModel\Main\Messages\FrameworkElementGotFocusMessage.cs" />
+    <Compile Include="ViewModel\Shared\ColorItemViewModel.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ActivateContextRibbonTabMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ApplicationModeChangedMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\CloseDesignersMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\NavigateToDataPointMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ShowDesignerMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ShowHistoryItemMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ShowLocationSelectionDialogMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ShowHasValidationErrorsDialogMessage.cs" />
+    <Compile Include="ViewModel\Shared\Messages\ShowWhatsNewDialogMessage.cs" />
+    <Compile Include="ViewModel\Shared\PhotoViewModel.cs" />
+    <Compile Include="ViewModel\RollingStocks\RollingStockStatusViewModel.cs" />
+    <Compile Include="ViewModel\Shared\PrinterViewModel.cs" />
+    <Compile Include="ViewModel\Shared\ServiceAttributeViewModel.cs" />
+    <Compile Include="ViewModel\Shared\RailroadViewModel.cs" />
+    <Compile Include="ViewModel\Shared\SiteViewModel.cs" />
+    <Compile Include="ViewModel\Switchers\SwitcherViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="ViewModel\WheelReport\WheelReportDesignerViewModel.cs" />
+    <Compile Include="ViewModel\WheelReport\OverviewViewModel.cs" />
+    <Compile Include="ViewModel\WheelReport\WheelReportViewModel.cs" />
+    <Compile Include="ViewModel\Yards\MultiSwitcherViewModel.cs" />
+    <Compile Include="ViewModel\Yards\TrackViewModel.cs" />
+    <Compile Include="ViewModel\Yards\YardsDesignerViewModel.cs" />
+    <Compile Include="ViewModel\Yards\YardViewModel.cs" />
+    <Compile Include="View\Cabeese\CabeeseDesignerView.xaml.cs">
+      <DependentUpon>CabeeseDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cabeese\CabooseView.xaml.cs">
+      <DependentUpon>CabooseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cabeese\Comparers\SfDataGridCabooseDataValidationResultNameComparer.cs" />
+    <Compile Include="View\Cabeese\Converters\CabooseDisplayTextMultiValueConverter.cs" />
+    <Compile Include="View\Cabeese\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cars\CarsDesignerView.xaml.cs">
+      <DependentUpon>CarsDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cars\CarView.xaml.cs">
+      <DependentUpon>CarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cars\Converters\CarDisplayTextMultiValueConverter.cs" />
+    <Compile Include="View\Cars\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cars\LoadsEmptyView.xaml.cs">
+      <DependentUpon>LoadsEmptyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\CityView.xaml.cs">
+      <DependentUpon>CityView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\CitiesDesignerView.xaml.cs">
+      <DependentUpon>CitiesDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\GeneralView.xaml.cs">
+      <DependentUpon>GeneralView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\IndustryGeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>IndustryGeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\IndustryView.xaml.cs">
+      <DependentUpon>IndustryView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\PrintSchemeView.xaml.cs">
+      <DependentUpon>PrintSchemeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\SpurGeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>SpurGeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cities\SpurView.xaml.cs">
+      <DependentUpon>SpurView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crew\CrewDesignerView.xaml.cs">
+      <DependentUpon>CrewDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crew\CrewView.xaml.cs">
+      <DependentUpon>CrewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Crew\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\LocationSelectionDialog.xaml.cs">
+      <DependentUpon>LocationSelectionDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\HasValidationErrorsDialog.xaml.cs">
+      <DependentUpon>HasValidationErrorsDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Dialogs\WhatsNewDialog.xaml.cs">
+      <DependentUpon>WhatsNewDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locations\Controls\LocationSelectionControl.xaml.cs">
+      <DependentUpon>LocationSelectionControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locations\Controls\LocationSelectionFilterAndSortControl.xaml.cs">
+      <DependentUpon>LocationSelectionFilterAndSortControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locations\Controls\LocationSelectionPanelControl.xaml.cs">
+      <DependentUpon>LocationSelectionPanelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locations\Controls\ParentLocationControl.xaml.cs">
+      <DependentUpon>ParentLocationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locomotives\Comparers\SfDataGridLocomotiveDataValidationResultEntityNameComparer.cs" />
+    <Compile Include="View\Locomotives\Converters\LocomotiveDisplayTextMultiValueConverter.cs" />
+    <Compile Include="View\Locomotives\DccView.xaml.cs">
+      <DependentUpon>DccView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locomotives\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locomotives\LocomotivesDesignerView.xaml.cs">
+      <DependentUpon>LocomotivesDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locomotives\LocomotiveView.xaml.cs">
+      <DependentUpon>LocomotiveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Locomotives\TypeCharacteristicsView.xaml.cs">
+      <DependentUpon>TypeCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainWindowView.xaml.cs">
+      <DependentUpon>MainWindowView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStageConductView.xaml.cs">
+      <DependentUpon>BackStageConductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStageHelpView.xaml.cs">
+      <DependentUpon>BackStageHelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStageLicenseView.xaml.cs">
+      <DependentUpon>BackStageLicenseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStagePrintingView.xaml.cs">
+      <DependentUpon>BackStagePrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStageCommunicationsView.xaml.cs">
+      <DependentUpon>BackStageCommunicationsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackStageWelcomeView.xaml.cs">
+      <DependentUpon>BackStageWelcomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\BackstageSettingsView.xaml.cs">
+      <DependentUpon>BackstageSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\Converters\DesignerTypeStringToShortNameValueConverter.cs" />
+    <Compile Include="View\Main\Converters\DesignerTypeToIconValueConverter.cs" />
+    <Compile Include="View\Main\HelpView.xaml.cs">
+      <DependentUpon>HelpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\MainToolbarView.xaml.cs">
+      <DependentUpon>MainToolbarView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Main\StatusView.xaml.cs">
+      <DependentUpon>StatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RollingStocks\CommentsView.xaml.cs">
+      <DependentUpon>CommentsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RollingStocks\DwellTimeDataView.xaml.cs">
+      <DependentUpon>DwellTimeDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RollingStocks\MaintenanceDataView.xaml.cs">
+      <DependentUpon>MaintenanceDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RollingStocks\ScaleDataView.xaml.cs">
+      <DependentUpon>ScaleDataView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\WorkEditorView.xaml.cs">
+      <DependentUpon>WorkEditorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\DivPtLogicView.xaml.cs">
+      <DependentUpon>DivPtLogicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ExtraBoardLogicLogicView.xaml.cs">
+      <DependentUpon>ExtraBoardLogicLogicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\BuildInstructionsView.xaml.cs">
+      <DependentUpon>BuildInstructionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\CabooseLogicView.xaml.cs">
+      <DependentUpon>CabooseLogicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\AppLogicView.xaml.cs">
+      <DependentUpon>AppLogicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\LocoLogicView.xaml.cs">
+      <DependentUpon>LocoLogicView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\CrewInstructionsView.xaml.cs">
+      <DependentUpon>CrewInstructionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\PrintingView.xaml.cs">
+      <DependentUpon>PrintingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\CarTypeView.xaml.cs">
+      <DependentUpon>CarTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\RoutingView.xaml.cs">
+      <DependentUpon>RoutingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\CharacteristicsView.xaml.cs">
+      <DependentUpon>CharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\GeneralView.xaml.cs">
+      <DependentUpon>GeneralView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServicesView.xaml.cs">
+      <DependentUpon>ServicesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Services\ServicesDesignerView.xaml.cs">
+      <DependentUpon>ServicesDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\AppearanceSettingsView.xaml.cs">
+      <DependentUpon>AppearanceSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\ColorSettingsView.xaml.cs">
+      <DependentUpon>ColorSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\GeneralSettingsView.xaml.cs">
+      <DependentUpon>GeneralSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\LayoutSettingsView.xaml.cs">
+      <DependentUpon>LayoutSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Settings\OperationsSettingsView.xaml.cs">
+      <DependentUpon>OperationsSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Cars\Comparers\SfDataGridCarDataValidationResultEntityNameComparer.cs" />
+    <Compile Include="View\Shared\Controls\AlternatingTextControl.xaml.cs">
+      <DependentUpon>AlternatingTextControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\BindableTextBlock.cs" />
+    <Compile Include="View\Shared\Controls\CustomHelp.cs" />
+    <Compile Include="View\Shared\Controls\ExpandableEditFieldControl.xaml.cs">
+      <DependentUpon>ExpandableEditFieldControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\FocusableNavigationElement.cs" />
+    <Compile Include="View\Shared\Controls\InstructionsControl.xaml.cs">
+      <DependentUpon>InstructionsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\IntegerUpDownControl.xaml.cs">
+      <DependentUpon>IntegerUpDownControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectCarRoadsControl.xaml.cs">
+      <DependentUpon>SelectCarRoadsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectCarTypesControl.xaml.cs">
+      <DependentUpon>SelectCarTypesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectCommoditiesControl.xaml.cs">
+      <DependentUpon>SelectCommoditiesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\MarqueeControl.xaml.cs">
+      <DependentUpon>MarqueeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\MonthYearEditorControl.xaml.cs">
+      <DependentUpon>MonthYearEditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\RichTextBoxWrapper.xaml.cs">
+      <DependentUpon>RichTextBoxWrapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SearchTextBoxControl.xaml.cs">
+      <DependentUpon>SearchTextBoxControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectLocationControl.xaml.cs">
+      <DependentUpon>SelectLocationControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectRailroadsControl.xaml.cs">
+      <DependentUpon>SelectRailroadsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectServiceAttributesControl.xaml.cs">
+      <DependentUpon>SelectServiceAttributesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectServicesControl.xaml.cs">
+      <DependentUpon>SelectServicesControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectSpursControl.xaml.cs">
+      <DependentUpon>SelectSpursControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SelectTrainsServingControl.xaml.cs">
+      <DependentUpon>SelectTrainsServingControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\CarAvailabilityControl.xaml.cs">
+      <DependentUpon>CarAvailabilityControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Controls\SwitcherControl.xaml.cs">
+      <DependentUpon>SwitcherControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\Converters\DirectionTypeEnumToString.cs" />
+    <Compile Include="View\Shared\Converters\LocomotiveTypeEnumToStringConverter.cs" />
+    <Compile Include="View\Shared\Converters\LoadEmptyToStringConverter.cs" />
+    <Compile Include="View\Shared\Converters\DwellTimeAvailableToStringConverter.cs" />
+    <Compile Include="View\Shared\Converters\CitySortTypeToBooleanConverter.cs" />
+    <Compile Include="View\Shared\Converters\CityFilterTypeToBooleanConverter.cs" />
+    <Compile Include="View\Shared\Converters\YardFilterTypeToBooleanConverter.cs" />
+    <Compile Include="View\Shared\Converters\HistoryItemTypeToIconValueConverter.cs" />
+    <Compile Include="View\Shared\Converters\LocationOccupancyPercentageToSignalColorValueConverter.cs" />
+    <Compile Include="View\Shared\Converters\LocationStatisticsOccupancyPercentageToColorConverter.cs" />
+    <Compile Include="View\Shared\Converters\LocationStatisticsOccupancyPercentageToForecolorConverter.cs" />
+    <Compile Include="View\Shared\Converters\LocationStatisticsToIconValueConverter.cs" />
+    <Compile Include="View\Shared\Converters\LocationToIconValueConverter.cs" />
+    <Compile Include="View\Shared\Converters\CrewSortTypeToBooleanConverter.cs" />
+    <Compile Include="View\Shared\Converters\RollingStockSortTypeToBooleanConverter.cs" />
+    <Compile Include="View\Shared\Controls\PhotoControl.xaml.cs">
+      <DependentUpon>PhotoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Shared\TemplateSelectors\DesignerViewModelDataTemplateSelector.cs" />
+    <Compile Include="View\Validation\Controls\ValidationResultsControl.xaml.cs">
+      <DependentUpon>ValidationResultsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\YardsView.xaml.cs">
+      <DependentUpon>YardsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\CitiesView.xaml.cs">
+      <DependentUpon>CitiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\LocomotivesView.xaml.cs">
+      <DependentUpon>LocomotivesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\CaboosesView.xaml.cs">
+      <DependentUpon>CaboosesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\CarsView.xaml.cs">
+      <DependentUpon>CarsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\OverviewView.xaml.cs">
+      <DependentUpon>OverviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\WheelReportView.xaml.cs">
+      <DependentUpon>WheelReportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WheelReport\WheelReportDesignerView.xaml.cs">
+      <DependentUpon>WheelReportDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\TrainAssignedTrackView.xaml.cs">
+      <DependentUpon>TrainAssignedTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\StorageTrackView.xaml.cs">
+      <DependentUpon>StorageTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\StagingTrackView.xaml.cs">
+      <DependentUpon>StagingTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\PassengerTrackView.xaml.cs">
+      <DependentUpon>PassengerTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\InterchangeTrackView.xaml.cs">
+      <DependentUpon>InterchangeTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\EngineServiceTrackView.xaml.cs">
+      <DependentUpon>EngineServiceTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\CabooseTrackView.xaml.cs">
+      <DependentUpon>CabooseTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\BlockTrackView.xaml.cs">
+      <DependentUpon>BlockTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\DepartureTrackView.xaml.cs">
+      <DependentUpon>DepartureTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\ArrivalTrackView.xaml.cs">
+      <DependentUpon>ArrivalTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\TrainGeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>TrainGeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\GeneralCharacteristicsView.xaml.cs">
+      <DependentUpon>GeneralCharacteristicsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\GeneralView.xaml.cs">
+      <DependentUpon>GeneralView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\MultiSwitcherView.xaml.cs">
+      <DependentUpon>MultiSwitcherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\PrintSchemeView.xaml.cs">
+      <DependentUpon>PrintSchemeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\ThruTrackView.xaml.cs">
+      <DependentUpon>ThruTrackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\YardsDesignerView.xaml.cs">
+      <DependentUpon>YardsDesignerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Yards\YardView.xaml.cs">
+      <DependentUpon>YardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windsor\CastleWindsor.cs" />
+    <Compile Include="Windsor\CastleWindsorHelper.cs" />
+    <Compile Include="Windsor\WindsorInstaller.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Resources\ApplicationLicensing.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\backstage-help.jpg" />
+    <Resource Include="Resources\Images\backstage-history.jpg" />
+    <Resource Include="Resources\Images\backstage-license.jpg" />
+    <Resource Include="Resources\Images\backstage-new.jpg" />
+    <Resource Include="Resources\Images\backstage-printing.jpg" />
+    <Resource Include="Resources\Images\splash-screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Black\acknowledge.png" />
+    <Resource Include="Resources\Icons\Large\Black\add-snapshot.png" />
+    <Resource Include="Resources\Icons\Large\Black\add.png" />
+    <Resource Include="Resources\Icons\Large\Black\app.png" />
+    <Resource Include="Resources\Icons\Large\Black\arrow-back.png" />
+    <Resource Include="Resources\Icons\Large\Black\arrow-down.png" />
+    <Resource Include="Resources\Icons\Large\Black\arrow-forward.png" />
+    <Resource Include="Resources\Icons\Large\Black\arrow-up.png" />
+    <Resource Include="Resources\Icons\Large\Black\assign-crew.png" />
+    <Resource Include="Resources\Icons\Large\Black\assign.png" />
+    <Resource Include="Resources\Icons\Large\Black\bookmark.png" />
+    <Resource Include="Resources\Icons\Large\Black\build.png" />
+    <Resource Include="Resources\Icons\Large\Black\caboose.png" />
+    <Resource Include="Resources\Icons\Large\Black\cancel.png" />
+    <Resource Include="Resources\Icons\Large\Black\car.png" />
+    <Resource Include="Resources\Icons\Large\Black\character.png" />
+    <Resource Include="Resources\Icons\Large\Black\characteristics.png" />
+    <Resource Include="Resources\Icons\Large\Black\city.png" />
+    <Resource Include="Resources\Icons\Large\Black\clear-all.png" />
+    <Resource Include="Resources\Icons\Large\Black\clear.png" />
+    <Resource Include="Resources\Icons\Large\Black\crew.png" />
+    <Resource Include="Resources\Icons\Large\Black\delete.png" />
+    <Resource Include="Resources\Icons\Large\Black\details.png" />
+    <Resource Include="Resources\Icons\Large\Black\diesel-electric-locomotive.png" />
+    <Resource Include="Resources\Icons\Large\Black\display-settings.png" />
+    <Resource Include="Resources\Icons\Large\Black\division.png" />
+    <Resource Include="Resources\Icons\Large\Black\duplicate.png" />
+    <Resource Include="Resources\Icons\Large\Black\edit-location.png" />
+    <Resource Include="Resources\Icons\Large\Black\edit.png" />
+    <Resource Include="Resources\Icons\Large\Black\electric-locomotive.png" />
+    <Resource Include="Resources\Icons\Large\Black\exit.png" />
+    <Resource Include="Resources\Icons\Large\Black\expand.png" />
+    <Resource Include="Resources\Icons\Large\Black\extra-board.png" />
+    <Resource Include="Resources\Icons\Large\Black\filter.png" />
+    <Resource Include="Resources\Icons\Large\Black\getting-started.png" />
+    <Resource Include="Resources\Icons\Large\Black\include-selected.png" />
+    <Resource Include="Resources\Icons\Large\Black\industry.png" />
+    <Resource Include="Resources\Icons\Large\Black\instruction-set.png" />
+    <Resource Include="Resources\Icons\Large\Black\invert.png" />
+    <Resource Include="Resources\Icons\Large\Black\job.png" />
+    <Resource Include="Resources\Icons\Large\Black\license.png" />
+    <Resource Include="Resources\Icons\Large\Black\locked.png" />
+    <Resource Include="Resources\Icons\Large\Black\locomotive.png" />
+    <Resource Include="Resources\Icons\Large\Black\menu.png" />
+    <Resource Include="Resources\Icons\Large\Black\move-first.png" />
+    <Resource Include="Resources\Icons\Large\Black\move-last.png" />
+    <Resource Include="Resources\Icons\Large\Black\movement.png" />
+    <Resource Include="Resources\Icons\Large\Black\multi-switcher.png" />
+    <Resource Include="Resources\Icons\Large\Black\new.png" />
+    <Resource Include="Resources\Icons\Large\Black\online.png" />
+    <Resource Include="Resources\Icons\Large\Black\operations.png" />
+    <Resource Include="Resources\Icons\Large\Black\overview.png" />
+    <Resource Include="Resources\Icons\Large\Black\pause.png" />
+    <Resource Include="Resources\Icons\Large\Black\play.png" />
+    <Resource Include="Resources\Icons\Large\Black\print-scheme.png" />
+    <Resource Include="Resources\Icons\Large\Black\print.png" />
+    <Resource Include="Resources\Icons\Large\Black\railroad.png" />
+    <Resource Include="Resources\Icons\Large\Black\ratio.png" />
+    <Resource Include="Resources\Icons\Large\Black\regular-text.png" />
+    <Resource Include="Resources\Icons\Large\Black\report.png" />
+    <Resource Include="Resources\Icons\Large\Black\rolling-stock-group.png" />
+    <Resource Include="Resources\Icons\Large\Black\routing.png" />
+    <Resource Include="Resources\Icons\Large\Black\save-and-add-new.png" />
+    <Resource Include="Resources\Icons\Large\Black\save.png" />
+    <Resource Include="Resources\Icons\Large\Black\search.png" />
+    <Resource Include="Resources\Icons\Large\Black\select-all.png" />
+    <Resource Include="Resources\Icons\Large\Black\service.png" />
+    <Resource Include="Resources\Icons\Large\Black\settings.png" />
+    <Resource Include="Resources\Icons\Large\Black\short-text.png" />
+    <Resource Include="Resources\Icons\Large\Black\snapshot.png" />
+    <Resource Include="Resources\Icons\Large\Black\sort-ascending.png" />
+    <Resource Include="Resources\Icons\Large\Black\sort-change.png" />
+    <Resource Include="Resources\Icons\Large\Black\sort-descending.png" />
+    <Resource Include="Resources\Icons\Large\Black\steam-locomotive.png" />
+    <Resource Include="Resources\Icons\Large\Black\stop.png" />
+    <Resource Include="Resources\Icons\Large\Black\time.png" />
+    <Resource Include="Resources\Icons\Large\Black\track.png" />
+    <Resource Include="Resources\Icons\Large\Black\under-construction.png" />
+    <Resource Include="Resources\Icons\Large\Black\users.png" />
+    <Resource Include="Resources\Icons\Large\Black\yard.png" />
+    <Resource Include="Resources\Icons\Large\Black\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Color\clear-red.png" />
+    <Resource Include="Resources\Icons\Large\Color\signal-green.png" />
+    <Resource Include="Resources\Icons\Large\Color\signal-red.png" />
+    <Resource Include="Resources\Icons\Large\Color\signal-yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\LightGray\add.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\arrow-down.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\arrow-up.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\clear.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\include-selected.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\move-first.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\move-last.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\new.png" />
+    <Resource Include="Resources\Icons\Large\LightGray\select-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\White\acknowledge.png" />
+    <Resource Include="Resources\Icons\Large\White\add-snapshot.png" />
+    <Resource Include="Resources\Icons\Large\White\add.png" />
+    <Resource Include="Resources\Icons\Large\White\app.png" />
+    <Resource Include="Resources\Icons\Large\White\arrow-back.png" />
+    <Resource Include="Resources\Icons\Large\White\arrow-forward.png" />
+    <Resource Include="Resources\Icons\Large\White\assign-crew.png" />
+    <Resource Include="Resources\Icons\Large\White\assign.png" />
+    <Resource Include="Resources\Icons\Large\White\bookmark.png" />
+    <Resource Include="Resources\Icons\Large\White\build.png" />
+    <Resource Include="Resources\Icons\Large\White\caboose.png" />
+    <Resource Include="Resources\Icons\Large\White\car.png" />
+    <Resource Include="Resources\Icons\Large\White\character.png" />
+    <Resource Include="Resources\Icons\Large\White\characteristics.png" />
+    <Resource Include="Resources\Icons\Large\White\city.png" />
+    <Resource Include="Resources\Icons\Large\White\clear-all.png" />
+    <Resource Include="Resources\Icons\Large\White\clear.png" />
+    <Resource Include="Resources\Icons\Large\White\crew.png" />
+    <Resource Include="Resources\Icons\Large\White\deselect-all.png" />
+    <Resource Include="Resources\Icons\Large\White\details.png" />
+    <Resource Include="Resources\Icons\Large\White\display-settings.png" />
+    <Resource Include="Resources\Icons\Large\White\division.png" />
+    <Resource Include="Resources\Icons\Large\White\edit-location.png" />
+    <Resource Include="Resources\Icons\Large\White\edit.png" />
+    <Resource Include="Resources\Icons\Large\White\exclude-selected.png" />
+    <Resource Include="Resources\Icons\Large\White\exit.png" />
+    <Resource Include="Resources\Icons\Large\White\expand.png" />
+    <Resource Include="Resources\Icons\Large\White\extra-board.png" />
+    <Resource Include="Resources\Icons\Large\White\filter.png" />
+    <Resource Include="Resources\Icons\Large\White\getting-started.png" />
+    <Resource Include="Resources\Icons\Large\White\industry.png" />
+    <Resource Include="Resources\Icons\Large\White\invert.png" />
+    <Resource Include="Resources\Icons\Large\White\job.png" />
+    <Resource Include="Resources\Icons\Large\White\license.png" />
+    <Resource Include="Resources\Icons\Large\White\locomotive.png" />
+    <Resource Include="Resources\Icons\Large\White\menu.png" />
+    <Resource Include="Resources\Icons\Large\White\move-first.png" />
+    <Resource Include="Resources\Icons\Large\White\move-last.png" />
+    <Resource Include="Resources\Icons\Large\White\movement.png" />
+    <Resource Include="Resources\Icons\Large\White\new.png" />
+    <Resource Include="Resources\Icons\Large\White\online.png" />
+    <Resource Include="Resources\Icons\Large\White\operations.png" />
+    <Resource Include="Resources\Icons\Large\White\overview.png" />
+    <Resource Include="Resources\Icons\Large\White\pause.png" />
+    <Resource Include="Resources\Icons\Large\White\play.png" />
+    <Resource Include="Resources\Icons\Large\White\print-scheme.png" />
+    <Resource Include="Resources\Icons\Large\White\print.png" />
+    <Resource Include="Resources\Icons\Large\White\ratio.png" />
+    <Resource Include="Resources\Icons\Large\White\regular-text.png" />
+    <Resource Include="Resources\Icons\Large\White\report.png" />
+    <Resource Include="Resources\Icons\Large\White\routing.png" />
+    <Resource Include="Resources\Icons\Large\White\search.png" />
+    <Resource Include="Resources\Icons\Large\White\select-all.png" />
+    <Resource Include="Resources\Icons\Large\White\service.png" />
+    <Resource Include="Resources\Icons\Large\White\settings.png" />
+    <Resource Include="Resources\Icons\Large\White\short-text.png" />
+    <Resource Include="Resources\Icons\Large\White\snapshot.png" />
+    <Resource Include="Resources\Icons\Large\White\stop.png" />
+    <Resource Include="Resources\Icons\Large\White\time.png" />
+    <Resource Include="Resources\Icons\Large\White\train.png" />
+    <Resource Include="Resources\Icons\Large\White\users.png" />
+    <Resource Include="Resources\Icons\Large\White\yard.png" />
+    <Resource Include="Resources\Icons\Large\White\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\acknowledge.png" />
+    <Resource Include="Resources\Icons\Small\Black\add-snapshot.png" />
+    <Resource Include="Resources\Icons\Small\Black\add.png" />
+    <Resource Include="Resources\Icons\Small\Black\app.png" />
+    <Resource Include="Resources\Icons\Small\Black\arrow-back.png" />
+    <Resource Include="Resources\Icons\Small\Black\arrow-down.png" />
+    <Resource Include="Resources\Icons\Small\Black\arrow-forward.png" />
+    <Resource Include="Resources\Icons\Small\Black\arrow-up.png" />
+    <Resource Include="Resources\Icons\Small\Black\assign-crew.png" />
+    <Resource Include="Resources\Icons\Small\Black\assign.png" />
+    <Resource Include="Resources\Icons\Small\Black\bookmark.png" />
+    <Resource Include="Resources\Icons\Small\Black\build.png" />
+    <Resource Include="Resources\Icons\Small\Black\caboose.png" />
+    <Resource Include="Resources\Icons\Small\Black\cancel.png" />
+    <Resource Include="Resources\Icons\Small\Black\car.png" />
+    <Resource Include="Resources\Icons\Small\Black\character.png" />
+    <Resource Include="Resources\Icons\Small\Black\characteristics.png" />
+    <Resource Include="Resources\Icons\Small\Black\city.png" />
+    <Resource Include="Resources\Icons\Small\Black\clear-all.png" />
+    <Resource Include="Resources\Icons\Small\Black\clear.png" />
+    <Resource Include="Resources\Icons\Small\Black\crew.png" />
+    <Resource Include="Resources\Icons\Small\Black\delete.png" />
+    <Resource Include="Resources\Icons\Small\Black\details.png" />
+    <Resource Include="Resources\Icons\Small\Black\diesel-electric-locomotive.png" />
+    <Resource Include="Resources\Icons\Small\Black\display-settings.png" />
+    <Resource Include="Resources\Icons\Small\Black\division.png" />
+    <Resource Include="Resources\Icons\Small\Black\DownArrow.png" />
+    <Resource Include="Resources\Icons\Small\Black\duplicate.png" />
+    <Resource Include="Resources\Icons\Small\Black\edit-location.png" />
+    <Resource Include="Resources\Icons\Small\Black\edit.png" />
+    <Resource Include="Resources\Icons\Small\Black\electric-locomotive.png" />
+    <Resource Include="Resources\Icons\Small\Black\exit.png" />
+    <Resource Include="Resources\Icons\Small\Black\expand.png" />
+    <Resource Include="Resources\Icons\Small\Black\extra-board.png" />
+    <Resource Include="Resources\Icons\Small\Black\filter.png" />
+    <Resource Include="Resources\Icons\Small\Black\getting-started.png" />
+    <Resource Include="Resources\Icons\Small\Black\include-selected.png" />
+    <Resource Include="Resources\Icons\Small\Black\industry.png" />
+    <Resource Include="Resources\Icons\Small\Black\instruction-set.png" />
+    <Resource Include="Resources\Icons\Small\Black\invert.png" />
+    <Resource Include="Resources\Icons\Small\Black\job.png" />
+    <Resource Include="Resources\Icons\Small\Black\license.png" />
+    <Resource Include="Resources\Icons\Small\Black\lock.png" />
+    <Resource Include="Resources\Icons\Small\Black\menu.png" />
+    <Resource Include="Resources\Icons\Small\Black\move-first.png" />
+    <Resource Include="Resources\Icons\Small\Black\move-last.png" />
+    <Resource Include="Resources\Icons\Small\Black\movement.png" />
+    <Resource Include="Resources\Icons\Small\Black\multi-switcher.png" />
+    <Resource Include="Resources\Icons\Small\Black\new.png" />
+    <Resource Include="Resources\Icons\Small\Black\online.png" />
+    <Resource Include="Resources\Icons\Small\Black\operations.png" />
+    <Resource Include="Resources\Icons\Small\Black\overview.png" />
+    <Resource Include="Resources\Icons\Small\Black\pause.png" />
+    <Resource Include="Resources\Icons\Small\Black\play.png" />
+    <Resource Include="Resources\Icons\Small\Black\print-scheme.png" />
+    <Resource Include="Resources\Icons\Small\Black\print.png" />
+    <Resource Include="Resources\Icons\Small\Black\railroad.png" />
+    <Resource Include="Resources\Icons\Small\Black\ratio.png" />
+    <Resource Include="Resources\Icons\Small\Black\regular-text.png" />
+    <Resource Include="Resources\Icons\Small\Black\Remove.png" />
+    <Resource Include="Resources\Icons\Small\Black\report.png" />
+    <Resource Include="Resources\Icons\Small\Black\rolling-stock-group.png" />
+    <Resource Include="Resources\Icons\Small\Black\routing.png" />
+    <Resource Include="Resources\Icons\Small\Black\save-and-add-new.png" />
+    <Resource Include="Resources\Icons\Small\Black\save.png" />
+    <Resource Include="Resources\Icons\Small\Black\search.png" />
+    <Resource Include="Resources\Icons\Small\Black\select-all.png" />
+    <Resource Include="Resources\Icons\Small\Black\service.png" />
+    <Resource Include="Resources\Icons\Small\Black\settings.png" />
+    <Resource Include="Resources\Icons\Small\Black\short-text.png" />
+    <Resource Include="Resources\Icons\Small\Black\snapshot.png" />
+    <Resource Include="Resources\Icons\Small\Black\sort-ascending.png" />
+    <Resource Include="Resources\Icons\Small\Black\sort-change.png" />
+    <Resource Include="Resources\Icons\Small\Black\sort-descending.png" />
+    <Resource Include="Resources\Icons\Small\Black\steam-locomotive.png" />
+    <Resource Include="Resources\Icons\Small\Black\stop.png" />
+    <Resource Include="Resources\Icons\Small\Black\time.png" />
+    <Resource Include="Resources\Icons\Small\Black\under-construction.png" />
+    <Resource Include="Resources\Icons\Small\Black\UpArrow.png" />
+    <Resource Include="Resources\Icons\Small\Black\users.png" />
+    <Resource Include="Resources\Icons\Small\Black\yard.png" />
+    <Resource Include="Resources\Icons\Small\Black\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Color\clear-red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\LightGray\add.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\arrow-down.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\arrow-up.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\clear.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\include-selected.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\move-first.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\move-last.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\new.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\Remove.png" />
+    <Resource Include="Resources\Icons\Small\LightGray\select-all.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\White\acknowledge.png" />
+    <Resource Include="Resources\Icons\Small\White\add-snapshot.png" />
+    <Resource Include="Resources\Icons\Small\White\add.png" />
+    <Resource Include="Resources\Icons\Small\White\app.png" />
+    <Resource Include="Resources\Icons\Small\White\arrow-back.png" />
+    <Resource Include="Resources\Icons\Small\White\arrow-forward.png" />
+    <Resource Include="Resources\Icons\Small\White\assign-crew.png" />
+    <Resource Include="Resources\Icons\Small\White\assign.png" />
+    <Resource Include="Resources\Icons\Small\White\bookmark.png" />
+    <Resource Include="Resources\Icons\Small\White\build.png" />
+    <Resource Include="Resources\Icons\Small\White\caboose.png" />
+    <Resource Include="Resources\Icons\Small\White\car.png" />
+    <Resource Include="Resources\Icons\Small\White\character.png" />
+    <Resource Include="Resources\Icons\Small\White\characteristics.png" />
+    <Resource Include="Resources\Icons\Small\White\city.png" />
+    <Resource Include="Resources\Icons\Small\White\clear-all.png" />
+    <Resource Include="Resources\Icons\Small\White\clear.png" />
+    <Resource Include="Resources\Icons\Small\White\crew.png" />
+    <Resource Include="Resources\Icons\Small\White\deselect-all.png" />
+    <Resource Include="Resources\Icons\Small\White\details.png" />
+    <Resource Include="Resources\Icons\Small\White\display-settings.png" />
+    <Resource Include="Resources\Icons\Small\White\division.png" />
+    <Resource Include="Resources\Icons\Small\White\edit-location.png" />
+    <Resource Include="Resources\Icons\Small\White\edit.png" />
+    <Resource Include="Resources\Icons\Small\White\exclude-selected.png" />
+    <Resource Include="Resources\Icons\Small\White\exit.png" />
+    <Resource Include="Resources\Icons\Small\White\expand.png" />
+    <Resource Include="Resources\Icons\Small\White\extra-board.png" />
+    <Resource Include="Resources\Icons\Small\White\filter.png" />
+    <Resource Include="Resources\Icons\Small\White\getting-started.png" />
+    <Resource Include="Resources\Icons\Small\White\industry.png" />
+    <Resource Include="Resources\Icons\Small\White\invert.png" />
+    <Resource Include="Resources\Icons\Small\White\job.png" />
+    <Resource Include="Resources\Icons\Small\White\license.png" />
+    <Resource Include="Resources\Icons\Small\White\menu.png" />
+    <Resource Include="Resources\Icons\Small\White\move-first.png" />
+    <Resource Include="Resources\Icons\Small\White\move-last.png" />
+    <Resource Include="Resources\Icons\Small\White\movement.png" />
+    <Resource Include="Resources\Icons\Small\White\new.png" />
+    <Resource Include="Resources\Icons\Small\White\online.png" />
+    <Resource Include="Resources\Icons\Small\White\operations.png" />
+    <Resource Include="Resources\Icons\Small\White\overview.png" />
+    <Resource Include="Resources\Icons\Small\White\pause.png" />
+    <Resource Include="Resources\Icons\Small\White\play.png" />
+    <Resource Include="Resources\Icons\Small\White\print-scheme.png" />
+    <Resource Include="Resources\Icons\Small\White\print.png" />
+    <Resource Include="Resources\Icons\Small\White\ratio.png" />
+    <Resource Include="Resources\Icons\Small\White\regular-text.png" />
+    <Resource Include="Resources\Icons\Small\White\report.png" />
+    <Resource Include="Resources\Icons\Small\White\routing.png" />
+    <Resource Include="Resources\Icons\Small\White\search.png" />
+    <Resource Include="Resources\Icons\Small\White\select-all.png" />
+    <Resource Include="Resources\Icons\Small\White\settings.png" />
+    <Resource Include="Resources\Icons\Small\White\short-text.png" />
+    <Resource Include="Resources\Icons\Small\White\snapshot.png" />
+    <Resource Include="Resources\Icons\Small\White\stop.png" />
+    <Resource Include="Resources\Icons\Small\White\time.png" />
+    <Resource Include="Resources\Icons\Small\White\train.png" />
+    <Resource Include="Resources\Icons\Small\White\users.png" />
+    <Resource Include="Resources\Icons\Small\White\yard.png" />
+    <Resource Include="Resources\Icons\Small\White\zoom-in.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TrackBoss.Configuration\TrackBoss.Configuration.csproj">
+      <Project>{a2e2e77d-be83-4697-aa0f-a3db3c5fd353}</Project>
+      <Name>TrackBoss.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Data.Serializable\TrackBoss.Data.Serializable.csproj">
+      <Project>{37a02c79-4ff3-4d7c-97d8-95112eddf415}</Project>
+      <Name>TrackBoss.Data.Serializable</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Data.Validation\TrackBoss.Data.Validation.csproj">
+      <Project>{EBC61C37-1622-4451-BC97-698095D184AE}</Project>
+      <Name>TrackBoss.Data.Validation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Data\TrackBoss.Data.csproj">
+      <Project>{25fa648a-9910-4595-9eb9-ec6484cc86d0}</Project>
+      <Name>TrackBoss.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Help\TrackBoss.Help.csproj">
+      <Project>{fe9d2323-78ac-429c-9475-a7dde5932acd}</Project>
+      <Name>TrackBoss.Help</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Licensing\TrackBoss.Licensing.csproj">
+      <Project>{1df9c993-c310-48ad-8c3a-26d7e0103b58}</Project>
+      <Name>TrackBoss.Licensing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Mvvm.Shared\TrackBoss.Mvvm.Shared.csproj">
+      <Project>{bd6b865a-0d72-496b-bc25-ef875a9d9017}</Project>
+      <Name>TrackBoss.Mvvm.Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Mvvm.Validation\TrackBoss.Mvvm.Validation.csproj">
+      <Project>{7DF7B78A-5474-4431-8575-1FFFC80D3C0A}</Project>
+      <Name>TrackBoss.Mvvm.Validation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TrackBoss.Shared\TrackBoss.Shared.csproj">
+      <Project>{337DF4E0-33F3-45E1-AA5D-1AB7291AE1AF}</Project>
+      <Name>TrackBoss.Shared</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Resources\Controls\ItemTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Controls\Custom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\BaseStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\BorderAndShapeStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\CustomControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ExpanderStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GridSplitterStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\GridStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ImageStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ItemTemplateStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\ListStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\PanelStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SeparatorStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\SyncfusionControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\TextStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\XceedControlStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Templates\DesignerViewDataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cabeese\CabeeseDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cabeese\CabooseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cabeese\GeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cars\CarsDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cars\CarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cars\GeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cars\LoadsEmptyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\CityView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Cities\CitiesDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\GeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\GeneralView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\IndustryGeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\IndustryView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\PrintSchemeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\SpurGeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Cities\SpurView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crew\CrewDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Crew\CrewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Crew\GeneralCharacteristicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Dialogs\LocationSelectionDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\HasValidationErrorsDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Dialogs\WhatsNewDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locations\Controls\LocationSelectionControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locations\Controls\LocationSelectionFilterAndSortControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locations\Controls\LocationSelectionPanelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locations\Controls\ParentLocationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locomotives\DccView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locomotives\GeneralCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locomotives\LocomotivesDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locomotives\LocomotiveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Locomotives\TypeCharacteristicsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\BackStageConductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\BackStageHelpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Main\BackStageLicenseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Main\BackStagePrintingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Main\BackStageCommunicationsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\BackStageWelcomeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\BackstageSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\HelpView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\MainToolbarView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Main\StatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RollingStocks\CommentsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\RollingStocks\DwellTimeDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RollingStocks\MaintenanceDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RollingStocks\ScaleDataView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\WorkEditorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\DivPtLogicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\ExtraBoardLogicLogicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\BuildInstructionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\CabooseLogicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\AppLogicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\LocoLogicView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\CrewInstructionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\PrintingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\CarTypeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\RoutingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\CharacteristicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\GeneralView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Services\ServicesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Services\ServicesDesignerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Settings\AppearanceSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Settings\ColorSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Settings\GeneralSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Settings\LayoutSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Settings\OperationsSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\AlternatingTextControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\ExpandableEditFieldControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\InstructionsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\IntegerUpDownControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectCarRoadsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectCarTypesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectCommoditiesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\MarqueeControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\MonthYearEditorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\RichTextBoxWrapper.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\PhotoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SearchTextBoxControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectLocationControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectRailroadsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectServiceAttributesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectServicesControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectSpursControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\SelectTrainsServingControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Shared\Controls\CarAvailabilityControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Shared\Controls\SwitcherControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Validation\Controls\ValidationResultsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WheelReport\YardsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\CitiesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\LocomotivesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\CaboosesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\CarsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\OverviewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\WheelReportView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WheelReport\WheelReportDesignerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\TrainAssignedTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\StorageTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\StagingTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\PassengerTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\InterchangeTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\EngineServiceTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\CabooseTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\BlockTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\DepartureTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\ArrivalTrackView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\TrainGeneralCharacteristicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\GeneralCharacteristicsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\GeneralView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\MultiSwitcherView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Yards\PrintSchemeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Yards\ThruTrackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Yards\YardsDesignerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Yards\YardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\White\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Black\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\White\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Black\redo.png" />
+    <Resource Include="Resources\Icons\Large\Black\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\White\redo.png" />
+    <Resource Include="Resources\Icons\Large\White\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\redo.png" />
+    <Resource Include="Resources\Icons\Small\Black\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\White\redo.png" />
+    <Resource Include="Resources\Icons\Small\White\undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Black\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\White\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\White\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Images\backstage-settings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\Black\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Large\White\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\White\photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Icons\Small\Black\release-notes.png" />
+    <Resource Include="Resources\Icons\Small\White\release-notes.png" />
+    <Resource Include="Resources\Icons\Large\Black\release-notes.png" />
+    <Resource Include="Resources\Icons\Large\White\release-notes.png" />
+    <Resource Include="Resources\Icons\Small\Black\zoom-fit.png" />
+    <Resource Include="Resources\Icons\Small\Black\zoom-out.png" />
+    <Resource Include="Resources\Icons\Large\Black\zoom-fit.png" />
+    <Resource Include="Resources\Icons\Large\Black\zoom-out.png" />
+    <Resource Include="Resources\Icons\Large\Black\sort-alpha.png" />
+    <Resource Include="Resources\Icons\Small\Black\sort-alpha.png" />
+    <Resource Include="Resources\Icons\Small\White\sort-alpha.png" />
+    <Resource Include="Resources\Icons\Large\White\sort-alpha.png" />
+    <Resource Include="Resources\Icons\Small\Black\sort-category.png" />
+    <Resource Include="Resources\Icons\Large\Black\sort-category.png" />
+    <Resource Include="Resources\Icons\Large\White\sort-category.png" />
+    <Resource Include="Resources\Icons\Small\White\sort-category.png" />
+    <Resource Include="Resources\Icons\Large\White\sort-ascending.png" />
+    <Resource Include="Resources\Icons\Small\White\sort-ascending.png" />
+    <Resource Include="Resources\Icons\Large\White\track.png" />
+    <Resource Include="Resources\Icons\Large\Black\locate.png" />
+    <Resource Include="Resources\Icons\Large\White\locate.png" />
+    <Resource Include="Resources\Icons\Small\Black\locate.png" />
+    <Resource Include="Resources\Icons\Small\White\locate.png" />
+    <Resource Include="Resources\Icons\Large\Black\warning.png" />
+    <Resource Include="Resources\Icons\Small\Black\warning.png" />
+    <Resource Include="Resources\Icons\Large\White\warning.png" />
+    <Resource Include="Resources\Icons\Small\White\warning.png" />
+    <Resource Include="Resources\Icons\Small\Black\track.png" />
+    <Resource Include="Resources\Icons\Large\Black\del.png" />
+    <Resource Include="Resources\Icons\Small\Black\locomotive.png" />
+    <Content Include="Resources\Svg\add.svg" />
+    <Content Include="Resources\Svg\clear.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Main\" />
+    <Folder Include="View\Shared\Behaviors\" />
+    <Folder Include="View\Shared\Comparers\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(ProjectDir)SyncfusionLicenseRegister.bat PreBuild App.xaml.cs</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>$(ProjectDir)SyncfusionLicenseRegister.bat PostBuild App.xaml.cs</PostBuildEvent>
+  </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
